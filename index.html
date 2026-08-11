@@ -206,16 +206,17 @@
     font-weight:300;
   }
 
-  /* PORTFOLIO — masonry, natural image sizes, framed captions */
+  /* PORTFOLIO — row-major grid (fills left-to-right, top-to-bottom), framed captions */
   .grid{
-    column-count:3;
-    column-gap:26px;
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:26px;
+    align-items:start;
   }
   .card{
-    display:inline-block;
+    display:flex;
+    flex-direction:column;
     width:100%;
-    break-inside:avoid;
-    margin-bottom:26px;
     background:var(--surface);
     border:1px solid var(--frame);
     border-radius:6px;
@@ -290,10 +291,10 @@
   }
 
   @media (max-width:900px){
-    .grid{column-count:2;}
+    .grid{grid-template-columns:repeat(2, 1fr);}
   }
   @media (max-width:560px){
-    .grid{column-count:1;}
+    .grid{grid-template-columns:1fr;}
     section{padding:80px 6vw;}
   }
 
@@ -455,80 +456,128 @@
       <div class="section-num">٠١ — معرض الأعمال</div>
       <h2>مختارات من تصاميمي</h2>
     </div>
-    <p class="section-desc">تصاميم إعلانية لعلامات في مجالات المشروبات، القهوة، العطور، مستحضرات التجميل، والمطاعم.</p>
+    <p class="section-desc">تصاميم إعلانية لعلامات في مجالات المشروبات، الأغذية، العطور، الفخامة، والبراندنج الإبداعي.</p>
   </div>
 
   <div class="grid" id="gallery">
 
-    <div class="card reveal" data-full="images/1000015496.jpg">
-      <div class="frame-inner"><img src="images/1000015496.jpg" alt="إعلان عصير برتقال طبيعي"></div>
+    <div class="card reveal" data-full="images/gold-watch.jpg">
+      <div class="frame-inner"><img src="images/gold-watch.jpg" alt="إعلان ساعة ذهبية فاخرة"></div>
       <div class="card-caption">
-        <span><span class="cc-title">عصير طبيعي 100%</span><span class="cc-desc">حملة إعلانية لمشروب عصير برتقال بأسلوب طبيعي منعش</span></span>
+        <span><span class="cc-title">ذهب</span><span class="cc-desc">مشهد إعلاني فخم لساعة ذهبية وسط قاعة رخامية وسبائك ذهب</span></span>
+        <span class="cc-tag">ساعات فاخرة</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/tomato-paste.jpg">
+      <div class="frame-inner"><img src="images/tomato-paste.jpg" alt="إعلان معجون طماطم طبيعي"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">Tomato Paste</span><span class="cc-desc">تصميم منتج طبيعي وسط مزرعة طماطم بألوان زاهية وحيوية</span></span>
+        <span class="cc-tag">معلبات</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/honey.jpg">
+      <div class="frame-inner"><img src="images/honey.jpg" alt="إعلان عسل طبيعي 100%"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">عسل طبيعي</span><span class="cc-desc">مشهد بري صادق لعسل طبيعي بلمسة دبّ في مروج خضراء</span></span>
+        <span class="cc-tag">عسل</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/skull.jpg">
+      <div class="frame-inner"><img src="images/skull.jpg" alt="بوستر براندنج جمجمة بأسلوب هورور"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">الأَلَم</span><span class="cc-desc">هوية بصرية جريئة بأسلوب هورور لعلامة "Skull"</span></span>
+        <span class="cc-tag">براندنج</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/pomegranate.jpg">
+      <div class="frame-inner"><img src="images/pomegranate.jpg" alt="إعلان عصير رمان طبيعي"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">عصير رمان</span><span class="cc-desc">مشهد ريفي منعش لعصير رمان وسط حديقة وأزهار طبيعية</span></span>
         <span class="cc-tag">مشروبات</span>
       </div>
     </div>
 
-    <div class="card reveal" data-full="images/1000015474.jpg">
-      <div class="frame-inner"><img src="images/1000015474.jpg" alt="إعلان عطر فاخر"></div>
+    <div class="card reveal" data-full="images/burger.jpg">
+      <div class="frame-inner"><img src="images/burger.jpg" alt="إعلان برجر مطعم"></div>
       <div class="card-caption">
-        <span><span class="cc-title">عطر فاخر</span><span class="cc-desc">مشهد إعلاني بلمسة فخامة وذهب لعطر راقي</span></span>
-        <span class="cc-tag">إعلان فاخر</span>
-      </div>
-    </div>
-
-    <div class="card reveal" data-full="images/1000015504.jpg">
-      <div class="frame-inner"><img src="images/1000015504.jpg" alt="إعلان قهوة"></div>
-      <div class="card-caption">
-        <span><span class="cc-title">قهوة — تركيز أكثر</span><span class="cc-desc">إعلان دافئ لعلامة قهوة يربط الطعم بالتركيز</span></span>
-        <span class="cc-tag">قهوة</span>
-      </div>
-    </div>
-
-    <div class="card reveal" data-full="images/1000015468.jpg">
-      <div class="frame-inner"><img src="images/1000015468.jpg" alt="إعلان مشروب أزرق منعش"></div>
-      <div class="card-caption">
-        <span><span class="cc-title">مِنعش</span><span class="cc-desc">تصميم منتج بارد بلون أزرق جريء ومذاق جديد</span></span>
-        <span class="cc-tag">تصميم منتج</span>
-      </div>
-    </div>
-
-    <div class="card reveal" data-full="images/1000015467.jpg">
-      <div class="frame-inner"><img src="images/1000015467.jpg" alt="إعلان عسل"></div>
-      <div class="card-caption">
-        <span><span class="cc-title">Honey</span><span class="cc-desc">تصميم إعلاني طبيعي وناعم لمنتج عسل</span></span>
-        <span class="cc-tag">تصميم إعلان</span>
-      </div>
-    </div>
-
-    <div class="card reveal" data-full="images/1000015560.jpg">
-      <div class="frame-inner"><img src="images/1000015560.jpg" alt="إعلان برجر"></div>
-      <div class="card-caption">
-        <span><span class="cc-title">لذيذ</span><span class="cc-desc">إعلان مطعم بخصم 50% بأسلوب شهي وجذاب</span></span>
+        <span><span class="cc-title">استَمتِع بالطعم</span><span class="cc-desc">إعلان مطعم شهي يبرز الجبن الذائب والطزاجة بلمسة دافئة</span></span>
         <span class="cc-tag">مطاعم</span>
       </div>
     </div>
 
-    <div class="card reveal" data-full="images/1000015473.jpg">
-      <div class="frame-inner"><img src="images/1000015473.jpg" alt="إعلان مشروب بارد منعش"></div>
+    <div class="card reveal" data-full="images/perfume-water.jpg">
+      <div class="frame-inner"><img src="images/perfume-water.jpg" alt="إعلان عطر ناعم بأزهار الكرز"></div>
       <div class="card-caption">
-        <span><span class="cc-title">انتعاش</span><span class="cc-desc">إعلان مشروب بارد منعش بأجواء ثلجية جذابة</span></span>
+        <span><span class="cc-title">عطر ناعم</span><span class="cc-desc">مشهد رقيق لعطر وردي يطفو فوق الماء وسط أزهار الكرز</span></span>
+        <span class="cc-tag">عطور</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/tea.jpg">
+      <div class="frame-inner"><img src="images/tea.jpg" alt="إعلان شاي عربي فاخر"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">شاي عربي</span><span class="cc-desc">تصميم دافئ لعلامة شاي تراثية بأجواء بيت عربي أصيل</span></span>
+        <span class="cc-tag">مشروبات ساخنة</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/orange-branch.jpg">
+      <div class="frame-inner"><img src="images/orange-branch.jpg" alt="إعلان عصير برتقال معلّق على غصن"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">انتعاش طبيعي</span><span class="cc-desc">فكرة إبداعية لزجاجة عصير برتقال معلّقة بجذور شجرة</span></span>
+        <span class="cc-tag">تصميم منتج</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/chocolate.jpg">
+      <div class="frame-inner"><img src="images/chocolate.jpg" alt="إعلان شوكولاتة بالبندق"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">شوكولاتة</span><span class="cc-desc">تصميم شهي لقالب شوكولاتة ذائبة محاط ببندق طبيعي</span></span>
+        <span class="cc-tag">حلويات</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/water-pure.jpg">
+      <div class="frame-inner"><img src="images/water-pure.jpg" alt="إعلان مياه نقية PURE"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">PURE</span><span class="cc-desc">تصميم نظيف لزجاجة مياه معدنية تحلّق فوق جبال وشلال طبيعي</span></span>
+        <span class="cc-tag">مياه</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/lamborghini.jpg">
+      <div class="frame-inner"><img src="images/lamborghini.jpg" alt="إعلان فخامة لمبركيني"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">لمبركيني</span><span class="cc-desc">بوستر فخامة يجمع سيارة رياضية، ذهب، وورود بأسلوب لافت</span></span>
+        <span class="cc-tag">فخامة</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/coffee.jpg">
+      <div class="frame-inner"><img src="images/coffee.jpg" alt="إعلان بودرة قهوة طبيعية"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">قهوة طبيعية</span><span class="cc-desc">تصميم دافئ لعلبة قهوة محاطة بحبوب البن وأغصان طبيعية</span></span>
+        <span class="cc-tag">قهوة</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/perfume-smoke.jpg">
+      <div class="frame-inner"><img src="images/perfume-smoke.jpg" alt="إعلان عطر بلمسة خشبية ودخان"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">عطر شرقي</span><span class="cc-desc">تصميم عطر بأجواء دافئة بين الخشب والدخان والأوراق الذابلة</span></span>
+        <span class="cc-tag">عطور</span>
+      </div>
+    </div>
+
+    <div class="card reveal" data-full="images/orange-sunglow.jpg">
+      <div class="frame-inner"><img src="images/orange-sunglow.jpg" alt="إعلان عصير برتقال SunGlow"></div>
+      <div class="card-caption">
+        <span><span class="cc-title">SunGlow</span><span class="cc-desc">هوية إعلانية منعشة لعصير برتقال طبيعي وسط بستان مشمس</span></span>
         <span class="cc-tag">مشروبات</span>
-      </div>
-    </div>
-
-    <div class="card reveal" data-full="images/1000015471.jpg">
-      <div class="frame-inner"><img src="images/1000015471.jpg" alt="إعلان قهوة بوردر كوفي"></div>
-      <div class="card-caption">
-        <span><span class="cc-title">Border Coffee</span><span class="cc-desc">تصميم إعلاني لعلامة قهوة مختصة</span></span>
-        <span class="cc-tag">تصميم إعلان</span>
-      </div>
-    </div>
-
-    <div class="card reveal" data-full="images/1000015493.jpg">
-      <div class="frame-inner"><img src="images/1000015493.jpg" alt="إعلان أحمر شفاه"></div>
-      <div class="card-caption">
-        <span><span class="cc-title">Red</span><span class="cc-desc">تصميم إعلاني أنيق لمنتج أحمر شفاه</span></span>
-        <span class="cc-tag">تجميل</span>
       </div>
     </div>
 
